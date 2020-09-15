@@ -1,17 +1,29 @@
-#include stdio.h
-int main() {
-    int n, i, fact;
-    fact = 1;
-    printf(Введите целое число );
-    scanf(%d, &n);
+#include <stdio.h>
+#include <math.h>
 
-    if (n = 0) 
-        printf(Интеграла от 0 и отрицательного числа не существует!);
-    else {
-        for (i = 1; i = n; ++i) {
-            fact = i;
-        }
+int main()
+{
+    float a, b, c, x;
+    
+    printf("Введите число a: ");
+    scanf("%f", &a);
+    printf("Введите число b: ");
+    scanf("%f", &b);
+    printf("Введите число c: ");
+    scanf("%f", &c);
+    
+    int d;
+    d = b*b;
+    int tmp = 4.0*a*c;
+    d -= tmp;
+    if(d >= 0) { //дискриминант больше 0
+        x = (b-2*b) + sqrt(d);
+        x /= 2*a;
+        printf("x1 = %3.2f\n", x);
+        x = (b-2*b) - sqrt(d);
+        x /= 2*a;
+        printf("x2 = %3.2f\n", x);
     }
-        printf(Факториал числа %d равен %d!, n, fact);
-    return 0;
+    else
+        printf("HET.");
 }
