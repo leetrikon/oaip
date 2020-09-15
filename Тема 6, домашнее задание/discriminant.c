@@ -16,7 +16,7 @@ int main()
     d = b*b;
     int tmp = 4.0*a*c;
     d -= tmp;
-    if(d >= 0) { //дискриминант больше 0
+    if(d >= 0) {
         x = (b-2*b) + sqrt(d);
         x /= 2*a;
         printf("x1 = %3.2f\n", x);
