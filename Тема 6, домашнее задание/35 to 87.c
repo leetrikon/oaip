@@ -1,17 +1,12 @@
-#include stdio.h
-int main() {
-    int n, i, fact;
-    fact = 1;
-    printf(Введите целое число );
-    scanf(%d, &n);
+#include <stdio.h>
 
-    if (n = 0) 
-        printf(Интеграла от 0 и отрицательного числа не существует!);
-    else {
-        for (i = 1; i = n; ++i) {
-            fact = i;
-        }
-    }
-        printf(Факториал числа %d равен %d!, n, fact);
-    return 0;
+int main()
+{
+    int i;
+    
+    for(i = 35; i < 87; i++)
+        if(i % 7 == 1 || i % 7 == 2 || i % 7 == 5)
+            printf("%d\n", i);
+    
 }
+
