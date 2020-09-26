@@ -28,11 +28,10 @@ int main()
         break;
         
         case ('/'): 
-        if(b != 0)
-            res = a / b;
+        if(b == 0)
+            break;
         else
-            printf("Антон Викторович, не ломайте программу!\n");
-            return 0;
+            res = a / b;
         break;
         
         default:
