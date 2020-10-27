@@ -1,22 +1,11 @@
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
-
-void wait() { // функция для красоты
-    printf("Работа в процессе.\r"); // \r - возвращает курсор в начало строки
-    sleep(1); //функци
-    printf("Работа в процессе..\r");
-    sleep(1);
-    printf("Работа в процессе...\r\n");
-    sleep(1);
-}
 
 int randomFilling(int array[], int arrayLenght) {  //заполнение массива случайными числами
     int upLimit;
     printf("Введите верхний предел генерации чисел: ");
     scanf("%i", &upLimit);
-    wait();
     for(int i = 0; i < arrayLenght; i++) {
         array[i] = rand() % upLimit;
     }
@@ -125,11 +114,15 @@ int removeElement(int array[], int arrayLenght) { //удаление элеме�
 }
 
 int generateArray(int array[], int arrayLenght) {
-    printf("Как вы хотите заполнить массив? 1 - рандомно, 2 - вручную.\n Ваш выбор: ");
+    printf("Как вы хотите заполнить массив?\n1 - рандомно,\n2 - вручную,\n0 - выход из программы.\nВаш выбор: ");
     int decision, size;
     scanf("%i", &decision);
 
     switch (decision) {
+
+        case 0:
+            exit(0);
+            break;
 
         case 1:
             randomFilling(array, arrayLenght);
@@ -170,10 +163,15 @@ int main() {
         printf("3. Бинарный поиск элемента в массиве\n"); // NET
         printf("4. Удаление элемента из массива\n"); // DA
         printf("5. Повтор генерации массива\n"); // DA
+        printf("0. Выход из программы.\n");
         printf("Ваш выбор: ");
         scanf("%i", &act);
 
         switch (act) {
+
+            case 0:
+                exit(0);
+                break;
 
             case 1:
                 sortAscending(array, arrayLenght);
@@ -184,6 +182,7 @@ int main() {
                 break;
 
             case 3:
+                sortAscending(array, arrayLenght);
                 printf("Введите число, которое вы хотите найти: ");
                 int search;
                 scanf("%i", &search);
@@ -204,9 +203,6 @@ int main() {
             case 5:
                 generateArray(array, arrayLenght);
                 break;
-
-            case 6:
-                return 0;
 
             default:
                 printf("Ну что же вы, следуйте указаниям программы. Попробуйте сначала.");
